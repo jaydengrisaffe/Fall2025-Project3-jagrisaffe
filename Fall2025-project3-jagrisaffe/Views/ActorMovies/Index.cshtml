@@ -1,0 +1,55 @@
+@model IEnumerable<Fall2025_project3_jagrisaffe.Models.ActorMovie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Actor/Movies Collection</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add New Relationship</a>
+</p>
+<table id="actormovies" class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie.Title)
+            </td>
+            <td>
+                <div class="btn-group" role="group">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success">Details</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </div>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#actormovies').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "order": [[1, "asc"]],
+            });
+        });
+    </script>
+}

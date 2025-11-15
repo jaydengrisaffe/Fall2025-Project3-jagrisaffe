@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actors</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>Actors</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="movies.html">Movies</a> |
+        <a href="relationships.html">Relationships</a>
+    </nav>
+</header>
+
+<main>
+    <button onclick="showActorForm()">Add Actor</button>
+    <div id="actor-form" style="display:none;">
+        <input id="actor-name" placeholder="Name">
+        <input id="actor-gender" placeholder="Gender">
+        <input id="actor-age" placeholder="Age">
+        <input id="actor-imdb" placeholder="IMDB URL">
+        <button onclick="addActor()">Save</button>
+    </div>
+
+    <table id="actors-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>IMDB</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/actors.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>

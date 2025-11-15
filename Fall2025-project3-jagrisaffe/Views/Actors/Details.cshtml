@@ -1,0 +1,114 @@
+@model Fall2025_project3_jagrisaffe.Models.ViewModels.ActorDetailsViewModel
+
+@{
+    ViewData["Title"] = "Actor Details";
+}
+
+<h1>@Model.Actor.Name</h1>
+
+<div class="row">
+    <div id="photo-container" class="col-md-4">
+        @if (Model.Actor.Photo != null)
+        {
+            var base64 = Convert.ToBase64String(Model.Actor.Photo);
+            var imgSrc = $"data:image/jpeg;base64,{base64}";
+            <img src="@imgSrc" alt="@Model.Actor.Name photo" class="img-fluid rounded" />
+        }
+        else
+        {
+            <div class="alert alert-secondary">No photo available</div>
+        }
+    </div>
+
+    <div class="col-md-8">
+        <dl class="row">
+            <dt class="col-sm-3">Gender</dt>
+            <dd class="col-sm-9">@Model.Actor.Gender</dd>
+
+            <dt class="col-sm-3">Age</dt>
+            <dd class="col-sm-9">@Model.Actor.Age</dd>
+
+            <dt class="col-sm-3">IMDB</dt>
+            <dd class="col-sm-9">
+                <a href="@Model.Actor.IMDBLink" target="_blank" rel="noopener noreferrer">View on IMDB</a>
+            </dd>
+        </dl>
+
+        <h3>Movies Played by Actor</h3>
+        @if (Model.Movies.Any())
+        {
+            <ul class="list-group mb-4">
+                @foreach (var movie in Model.Movies)
+                {
+                    <li class="list-group-item">
+                        <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id">
+                            @movie.Title
+                        </a>
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p class="text-muted">No movies assigned yet.</p>
+        }
+
+        <div class="mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.Actor.Id" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            <a asp-action="Delete" asp-route-id="@Model.Actor.Id" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+</div>
+
+<hr class="my-4" />
+
+<h2>AI Generated Tweets</h2>
+
+@if (Model.Tweets.Any())
+{
+    <h4>
+        Average Sentiment:
+        <span class="badge @(Model.AverageSentiment >= 0.05 ? "bg-success" : Model.AverageSentiment <= -0.05 ? "bg-danger" : "bg-secondary")">
+            @Model.AverageSentiment.ToString("F2")
+        </span>
+    </h4>
+
+    <table id="tweets" class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th style="width: 70%">Tweet</th>
+                <th style="width: 30%">Sentiment Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Model.Tweets)
+            {
+                <tr>
+                    <td>@review.Text</td>
+                    <td>
+                        <span class="badge @(review.SentimentScore >= 0.05 ? "bg-success" : review.SentimentScore <= -0.05 ? "bg-danger" : "bg-secondary")">
+                            @review.SentimentScore.ToString("F2")
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="text-muted">No tweets generated yet.</p>
+}
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#tweets').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "order": [[1, "asc"]],
+            });
+        });
+    </script>
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1 id="movie-title-header"></h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="movies.html">Movies</a> |
+        <a href="actors.html">Actors</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Movie Info</h2>
+        <p>Genre: <span id="movie-genre"></span></p>
+        <p>Year: <span id="movie-year"></span></p>
+        <p>IMDB: <a id="movie-imdb" href="#" target="_blank">Link</a></p>
+        <p>Actors: <span id="movie-actors"></span></p>
+    </section>
+
+    <section>
+        <h2>AI Reviews & Sentiment</h2>
+        <h3 id="movie-sentiment"></h3>
+        <table id="ai-reviews-table">
+            <thead>
+            <tr>
+                <th>Review</th>
+                <th>Sentiment</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="fetchMovieAIReviews()">Load AI Reviews</button>
+    </section>
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/movies.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>

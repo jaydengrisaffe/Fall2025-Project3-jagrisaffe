@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor-Movie Relationships</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>Actor-Movie Relationships</h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="movies.html">Movies</a> |
+        <a href="actors.html">Actors</a>
+    </nav>
+</header>
+
+<main>
+    <button onclick="showRelationshipForm()">Add Relationship</button>
+    <div id="relationship-form" style="display:none;">
+        <select id="select-actor"></select>
+        <select id="select-movie"></select>
+        <button onclick="addRelationship()">Save</button>
+    </div>
+
+    <table id="relationships-table">
+        <thead>
+        <tr>
+            <th>Actor</th>
+            <th>Movie</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/relationships.js"></script>
+</body>
+</html>

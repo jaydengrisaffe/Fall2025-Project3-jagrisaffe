@@ -1,0 +1,85 @@
+@model IEnumerable<Fall2025_project3_jagrisaffe.Models.Actor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Actors</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add Actor</a>
+</p>
+<table id="actors" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IMDBLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td style="font-weight: 500;">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                <a href="@item.IMDBLink" target="_blank">View on IMDB</a>
+                </td>
+                <td>
+                    @if (item.Photo != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.Photo);
+                        var imgSrc = $"data:image/jpeg;base64,{base64}";
+                        <img src="@imgSrc" alt="@item.Name photo" style="max-width: 50px; max-height: 75px;" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">No poster</span>
+                    }
+                </td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success">Details</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#actors').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "order": [[1, "asc"]],
+                "columnDefs": [
+                    { "orderable": false, "targets": [3, 4] } 
+                ]
+            });
+        });
+    </script>
+}

@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+        <div class="container text-center">
+            <h1 class="display-1 fw-bold mb-4 animate-fade-in">
+                ULTRAVIOLET CINEMA
+            </h1>
+            <p class="lead fs-3 mb-5 animate-fade-in-delay">
+                Bold Movies. Bright Lights. Brought to you by AI.
+            </p>
+            <div class="hero-buttons animate-fade-in-delay-2">
+                <a asp-controller="Movies" asp-action="Index" class="btn btn-primary btn-lg mx-2 px-5 py-3">
+                    Browse Movies
+                </a>
+                <a asp-controller="Actors" asp-action="Index" class="btn btn-outline-light btn-lg mx-2 px-5 py-3">
+                    View Actors
+                </a>
+            </div>
+        </div>
+
+    <div class="row mt-5 mb-5">
+        <div class="col-md-12 text-center">
+            <div class="cta-section p-5 rounded">
+                <h2 class="display-5 mb-4" style="font-weight: 500;">Ready to Cine-File?</h2>
+                <p class="lead mb-4">
+                    Start curating movies and actors with the addition of AI-driven insights.
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a asp-controller="Movies" asp-action="Create" class="btn btn-success btn-lg px-5">
+                        Add a Movie
+                    </a>
+                    <a asp-controller="Actors" asp-action="Create" class="btn btn-info btn-lg px-5">
+                        Add an Actor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,85 @@
+@model IEnumerable<Fall2025_project3_jagrisaffe.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movie Collection</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Add Movie</a>
+</p>
+<table id="movies" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IMDBLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Poster)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td style="font-weight: 500;">
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <a href="@item.IMDBLink" target="_blank">View on IMDB</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+                <td>
+                    @if (item.Poster != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.Poster);
+                        var imgSrc = $"data:image/jpeg;base64,{base64}";
+                        <img src="@imgSrc" alt="@item.Title poster" style="max-width: 50px; max-height: 75px;" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">No poster</span>
+                    }
+                </td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success">Details</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            $('#movies').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "order": [[1, "asc"]],
+                "columnDefs": [
+                    { "orderable": false, "targets": [1, 4] } // Poster column
+                ]
+            });
+        });
+    </script>
+}

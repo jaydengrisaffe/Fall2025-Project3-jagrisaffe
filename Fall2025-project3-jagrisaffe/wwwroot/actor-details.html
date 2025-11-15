@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actor Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1 id="actor-name-header"></h1>
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="actors.html">Actors</a> |
+        <a href="movies.html">Movies</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Actor Info</h2>
+        <p>Gender: <span id="actor-gender"></span></p>
+        <p>Age: <span id="actor-age"></span></p>
+        <p>IMDB: <a id="actor-imdb" href="#" target="_blank">Link</a></p>
+        <p>Movies: <span id="actor-movies"></span></p>
+    </section>
+
+    <section>
+        <h2>AI Tweets & Sentiment</h2>
+        <h3 id="actor-sentiment"></h3>
+        <table id="ai-tweets-table">
+            <thead>
+            <tr>
+                <th>Tweet</th>
+                <th>Sentiment</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button onclick="fetchActorAITweets()">Load AI Tweets</button>
+    </section>
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/actors.js"></script>
+<script src="js/api.js"></script>
+</body>
+</html>

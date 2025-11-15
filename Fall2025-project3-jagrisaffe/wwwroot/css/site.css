@@ -1,0 +1,301 @@
+/* --- Violet Digital Theme Variables --- */
+:root {
+    --primary-purple: #4A148C;   /* Very Deep Purple (for text/primary actions) */
+    --secondary-purple: #6A1B9A; /* Deep Purple (for navbar/accents) */
+    --accent-purple: #AB47BC;    /* Medium Bright Purple (for highlights/CTA) */
+    --light-surface: #E0E0E0;    /* Off-White/Light Gray */
+    --dark-background: #1A1A2E;  /* Very Dark Night Blue/Black */
+    --text-on-dark: #FFFFFF;
+}
+
+html {
+    font-size: 14px;
+}
+@media (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    /* Focus shadow changed to secondary purple outline */
+    box-shadow: 0 0 0 0.1rem var(--text-on-dark), 0 0 0 0.25rem var(--secondary-purple);
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Background changed to a purple gradient */
+    background: linear-gradient(135deg, var(--dark-background) 0%, var(--primary-purple) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+.btn-custom {
+    /* Custom button gradient changed to deep purple to medium purple */
+    background: linear-gradient(45deg, var(--secondary-purple), var(--accent-purple));
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-custom:hover {
+    transform: translateY(-2px);
+    /* Shadow color updated to secondary purple */
+    box-shadow: 0 5px 20px rgba(106, 27, 154, 0.4);
+}
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.movie-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.movie-card:hover img {
+    transform: scale(1.1);
+}
+.movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    padding: 20px;
+    color: white;
+}
+.navbar {
+    background: white !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+    /* Brand color set to primary purple */
+    color: var(--primary-purple) !important;
+    font-weight: 600;
+}
+.navbar .container-fluid {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.nav-link {
+    /* Nav link color set to secondary purple */
+    color: var(--secondary-purple) !important;
+    font-weight: 500;
+}
+.nav-link:hover {
+    /* Hover color set to accent purple */
+    color: var(--accent-purple) !important;
+}
+/* home page */
+.hero-section {
+    /* Hero background gradient changed to purple */
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--primary-purple) 100%);
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+}
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Heading color changed to deep contrast */
+    color: var(--dark-background);
+}
+.hero-section .lead {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    /* Lead text color changed to primary purple */
+    color: var(--primary-purple);
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* animation */
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+.animate-fade-in-delay {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+.animate-fade-in-delay-2 {
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    background: white;
+}
+.feature-card:hover {
+    transform: translateY(-10px);
+    /* Feature card shadow updated */
+    box-shadow: 0 10px 30px rgba(74, 20, 140, 0.46) !important;
+}
+.feature-icon {
+    font-size: 4rem;
+    line-height: 1;
+}
+.info-section {
+    border-radius: 15px;
+    /* Info section background updated */
+    background: linear-gradient(135deg, #F3E5F5 0%, #D1C4E9 100%);
+}
+.cta-section {
+    /* CTA section background updated */
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--secondary-purple) 100%);
+    color: var(--text-on-dark);
+}
+.cta-section h2 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    /* CTA heading color updated */
+    color: var(--dark-background);
+}
+.cta-section .lead {
+    /* CTA lead color updated */
+    color: var(--primary-purple);
+}
+/* buttons */
+.btn-primary {
+    /* Primary button gradient updated */
+    background: linear-gradient(45deg, var(--accent-purple), var(--secondary-purple));
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: white;
+}
+.btn-primary:hover {
+    /* Primary button hover updated */
+    background: linear-gradient(45deg, #9C27B0, var(--secondary-purple));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(171, 71, 188, 0.4);
+}
+.btn-outline-light {
+    /* Outline button border and text color updated */
+    border-color: var(--primary-purple);
+    color: var(--primary-purple);
+}
+.btn-outline-light:hover {
+    /* Outline button hover updated */
+    background: var(--primary-purple);
+    color: white;
+    border-color: var(--primary-purple);
+}
+.btn-success {
+    /* Success button updated (using secondary purple) */
+    background: var(--secondary-purple);
+    border: none;
+    color: white;
+}
+.btn-success:hover {
+    background: #5D1980;
+}
+.btn-info {
+    /* Info button updated (using accent purple) */
+    background: var(--accent-purple);
+    border: none;
+    color: var(--dark-background);
+}
+.btn-info:hover {
+    background: #9C27B0;
+}
+.btn-secondary-custom {
+    background: #6c757d;
+    border: none;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-secondary-custom:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+}
+.btn-green-solid {
+    /* Mapping Green Solid to Secondary Purple Solid */
+    background: var(--secondary-purple);
+    border: none;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-green-solid:hover {
+    background: #5D1980;
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.4);
+}
+.btn-gold-solid {
+    /* Mapping Gold Solid to Accent Purple Solid */
+    background: var(--accent-purple);
+    border: none;
+    color: var(--dark-background);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-gold-solid:hover {
+    background: #9C27B0;
+    box-shadow: 0 5px 15px rgba(171, 71, 188, 0.4);
+}
+/* sentiment badges */
+.badge.bg-primary {
+    /* Primary badge gradient updated */
+    background: linear-gradient(45deg, var(--accent-purple), var(--secondary-purple)) !important;
+}
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 600px;
+    }
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0 !important;
+    }
+    .feature-icon {
+        font-size: 3rem;
+    }
+}

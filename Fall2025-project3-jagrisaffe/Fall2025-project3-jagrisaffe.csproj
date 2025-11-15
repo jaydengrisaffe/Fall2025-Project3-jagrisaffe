@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>aspnet-Fall2025_project3_jagrisaffe-0761658f-cc50-423b-9874-f6e7e455e4a9</UserSecretsId>
+        <RootNamespace>Fall2025_project3_jagrisaffe</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Azure.AI.OpenAI" Version="2.3.0-beta.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.8"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.8"/>
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.8"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.8"/>
+        <PackageReference Include="VaderSharp2" Version="3.3.2.1" />
+    </ItemGroup>
+
+</Project>
