@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fall2025-project3-jagrisaffe")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a2a999f804ab513c21bc43edb9d9d68889be9e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fall2025-project3-jagrisaffe")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fall2025-project3-jagrisaffe")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
