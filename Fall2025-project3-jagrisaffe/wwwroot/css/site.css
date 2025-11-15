@@ -119,36 +119,6 @@ body {
     color: var(--accent-purple) !important;
 }
 /* home page */
-.hero-section {
-    /* Hero background gradient changed to purple */
-    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--primary-purple) 100%);
-    min-height: 650px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 50px;
-}
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: cover;
-}
-.hero-section h1 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    /* Heading color changed to deep contrast */
-    color: var(--dark-background);
-}
-.hero-section .lead {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-    /* Lead text color changed to primary purple */
-    color: var(--primary-purple);
-}
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -158,16 +128,6 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-/* animation */
-.animate-fade-in {
-    animation: fadeInUp 0.8s ease-out;
-}
-.animate-fade-in-delay {
-    animation: fadeInUp 0.8s ease-out 0.2s both;
-}
-.animate-fade-in-delay-2 {
-    animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 .feature-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -284,13 +244,7 @@ body {
     background: linear-gradient(45deg, var(--accent-purple), var(--secondary-purple)) !important;
 }
 @media (max-width: 768px) {
-    .hero-section {
-        min-height: 600px;
-    }
-    .hero-section h1 {
-        font-size: 3rem;
-    }
-    .hero-buttons .btn {
+    .buttons .btn {
         display: block;
         width: 100%;
         margin: 10px 0 !important;

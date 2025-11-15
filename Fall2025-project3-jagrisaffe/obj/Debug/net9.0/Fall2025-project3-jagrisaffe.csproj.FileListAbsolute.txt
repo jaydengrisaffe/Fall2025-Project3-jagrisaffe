@@ -329,12 +329,13 @@
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/Fall2025-project3-jagrisaffe.pdb
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/Fall2025-project3-jagrisaffe.genruntimeconfig.cache
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/ref/Fall2025-project3-jagrisaffe.dll
-/Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/8guhagrec4-k7x4q6d3mw.gz
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/mmvtjabvhb-9etpnrinp1.gz
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/u07fs8eg9l-t27r2ax76z.gz
-/Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/je7q0gob3x-ru06m861xu.gz
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/yuu9bz2yaw-0sail83hy2.gz
-/Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/1ghqb769sc-h71apq38cr.gz
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/0x4d3nfxwn-9bh917b50v.gz
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/ccuu94rs4z-3lyrwxyv61.gz
 /Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/akln6xfk03-k4ssbqalpj.gz
+/Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/Fall2025-project3-jagrisaffe.sourcelink.json
+/Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/je7q0gob3x-7g32wjshlm.gz
+/Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/1ghqb769sc-7spzrqkyam.gz
+/Users/jaydengrisaffe/RiderProjects/WebApp3/Fall2025-project3-jagrisaffe/obj/Debug/net9.0/compressed/8guhagrec4-aw9ak65gcy.gz
